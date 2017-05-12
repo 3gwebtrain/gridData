@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="trackByApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>One Time Binding</title>
+	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/styles/style.css">
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script src="/script/trackByApp.js"></script>
+</head>
+<body ng-controller="mainController as main">
+	<div class="container">
+		<table class="table">
+			<tr>
+				<th>Without Track </th>
+				<th>With Track</th>
+			</tr>
+			<tr>
+				<td>
+					<ul class="dataList">
+						<li ng-repeat="d in main.oneTimeData">
+							<h4>{{d.name}}</h4>
+							<span>{{d.age}}</span>
+							<span>{{d.city}}</span>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<ul class="dataList">
+						<li ng-repeat="d in main.twoWayData track by $index ">
+							<h4>{{d.name}}</h4>
+							<span>{{d.age}}</span>
+							<span>{{d.city}}</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Time Taken {{main.duration}}</td>
+				<td>Time Taken {{main.trackDuration}}</td>
+			</tr>
+			<tr>
+				<td><button class="btn" ng-click="main.appendData('oneTime')">Generate Data for Without Track Binding</button></td>
+				<td><button class="btn" ng-click="main.appendData('twoWay')">Generate Data for with Track Binding</button></td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

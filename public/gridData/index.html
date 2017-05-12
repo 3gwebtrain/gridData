@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html ng-app="gridDataApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>One Time Binding</title>
+	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/styles/grid.css">
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script src="/script/gridData.js"></script>
+	<script src="/script/gridDataFactories.js"></script>
+	<script src="/script/gridDataService.js"></script>
+</head>
+<body ng-controller="mainController as gridView">
+	<div class="container">
+		<div class="wrapper">
+			<h1>{{gridView.title}}</h1>
+			<div class="innerWrapper">
+				<ul class="flex cards" ng-repeat="data in gridView.gridData track by $index" >
+					<li> {{ data.mk}}</li>
+					<li> {{ data.controlNumber}} </li>
+					<li> {{ data.control}} </li>
+					<li> {{ data.prefix}} </li>
+					<li> {{ data.base}} </li>
+					<li> {{ data.suffix}} </li>
+					<li> {{ data.sp}} </li>
+					<li> {{ data.trimin}} </li>
+					<li> {{ data.offline}} </li>
+					<li> {{ data.engine}} </li>
+					<li> {{ data.zip}} </li>
+					<li> {{ data.station}} </li>
+					<li> {{ data.mk1}}</li>
+					<li> {{ data.controlNumber1}} </li>
+					<li> {{ data.control1}} </li>
+					<li> {{ data.prefix1}} </li>
+					<li> {{ data.base1}} </li>
+					<li> {{ data.suffix1}} </li>
+					<li> {{ data.sp1}} </li>
+					<li> {{ data.trimin1}} </li>
+					<li> {{ data.offline1}} </li>
+					<li> {{ data.engine1}} </li>
+					<li> {{ data.zip1}} </li>
+					<li> {{ data.station1}} </li>
+					<li> {{ data.mk1}}</li>
+					<li> {{ data.controlNumber1}} </li>
+					<li> {{ data.control1}} </li>
+					<li> {{ data.prefix1}} </li>
+					<li> {{ data.base1}} </li>
+					<li> {{ data.suffix1}} </li>
+					<li> {{ data.sp1}} </li>
+					<li> {{ data.trimin1}} </li>
+					<li> {{ data.offline1}} </li>
+					<li> {{ data.engine1}} </li>
+					<li> {{ data.zip1}} </li>
+					<li> {{ data.station1}} </li>
+					<li> {{ data.mk2}}</li>
+					<li> {{ data.controlNumber2}} </li>
+					<li> {{ data.control2}} </li>
+					<li> {{ data.prefix2}} </li>
+					<li> {{ data.base2}} </li>
+					<li> {{ data.suffix2}} </li>
+					<li> {{ data.sp2}} </li>
+					<li> {{ data.trimin2}} </li>
+					<li> {{ data.offline2}} </li>
+					<li> {{ data.engine2}} </li>
+					<li> {{ data.zip2}} </li>
+					<li> {{ data.station2}} </li>
+					<li> {{ data.mk3}}</li>
+					<li> {{ data.controlNumber3}} </li>
+					<li> {{ data.control3}} </li>
+					<li> {{ data.prefix3}} </li>
+					<li> {{ data.base3}} </li>
+					<li> {{ data.suffix3}} </li>
+					<li> {{ data.sp3}} </li>
+					<li> {{ data.trimin3}} </li>
+					<li> {{ data.offline3}} </li>
+					<li> {{ data.engine3}} </li>
+					<li> {{ data.zip3}} </li>
+					<li> {{ data.station3}} </li>
+
+					<li> {{ data.mk4}}</li>
+					<li> {{ data.controlNumber4}} </li>
+					<li> {{ data.control4}} </li>
+					<li> {{ data.prefix4}} </li>
+					<li> {{ data.base4}} </li>
+					<li> {{ data.suffix4}} </li>
+					<li> {{ data.sp4}} </li>
+					<li> {{ data.trimin4}} </li>
+					<li> {{ data.offline4}} </li>
+					<li> {{ data.engine4}} </li>
+					<li> {{ data.zip4}} </li>
+					<li> {{ data.station4}} </li>
+
+					<li> {{ data.mk5}}</li>
+					<li> {{ data.controlNumber5}} </li>
+					<li> {{ data.control5}} </li>
+					<li> {{ data.prefix5}} </li>
+					<li> {{ data.base5}} </li>
+					<li> {{ data.suffix5}} </li>
+					<li> {{ data.sp5}} </li>
+					<li> {{ data.trimin5}} </li>
+					<li> {{ data.offline5}} </li>
+					<li> {{ data.engine5}} </li>
+					<li> {{ data.zip5}} </li>
+					<li> {{ data.station5}} </li>
+
+					<li> {{ data.mk6}}</li>
+					<li> {{ data.controlNumber6}} </li>
+					<li> {{ data.control6}} </li>
+					<li> {{ data.prefix6}} </li>
+					<li> {{ data.base6}} </li>
+					<li> {{ data.suffix6}} </li>
+					<li> {{ data.sp6}} </li>
+					<li> {{ data.trimin6}} </li>
+					<li> {{ data.offline6}} </li>
+					<li> {{ data.engine6}} </li>
+					<li> {{ data.zip6}} </li>
+					<li> {{ data.station6}} </li>
+
+					<li> {{ data.mk7}}</li>
+					<li> {{ data.controlNumber7}} </li>
+					<li> {{ data.control7}} </li>
+					<li> {{ data.prefix7}} </li>
+					<li> {{ data.base7}} </li>
+					<li> {{ data.suffix7}} </li>
+					<li> {{ data.sp7}} </li>
+					<li> {{ data.trimin7}} </li>
+					<li> {{ data.offline7}} </li>
+					<li> {{ data.engine7}} </li>
+					<li> {{ data.zip7}} </li>
+					<li> {{ data.station7}} </li>
+
+					<li> {{ data.mk8}}</li>
+					<li> {{ data.controlNumber8}} </li>
+					<li> {{ data.control8}} </li>
+					<li> {{ data.prefix8}} </li>
+					<li> {{ data.base8}} </li>
+					<li> {{ data.suffix8}} </li>
+					<li> {{ data.sp8}} </li>
+					<li> {{ data.trimin8}} </li>
+					<li> {{ data.offline8}} </li>
+					<li> {{ data.engine8}} </li>
+					<li> {{ data.zip8}} </li>
+					<li> {{ data.station8}} </li>
+
+					<li> {{ data.mk9}}</li>
+					<li> {{ data.controlNumber9}} </li>
+					<li> {{ data.control9}} </li>
+					<li> {{ data.prefix9}} </li>
+					<li> {{ data.base9}} </li>
+					<li> {{ data.suffix9}} </li>
+					<li> {{ data.sp9}} </li>
+					<li> {{ data.trimin9}} </li>
+					<li> {{ data.offline9}} </li>
+					<li> {{ data.engine9}} </li>
+					<li> {{ data.zip9}} </li>
+					<li> {{ data.station9}} </li>
+				</ul>			
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "uxm",
+  "description": "uxm best practice tries",
+  "main": "server.js",
+  "authors": [
+    "Mohamed Arif B"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

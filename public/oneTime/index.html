@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="oneBindApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>One Time Binding</title>
+	<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/styles/style.css">
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script src="/script/oneBindApp.js"></script>
+</head>
+<body ng-controller="mainController as main">
+	<div class="container">
+		<table class="table">
+			<tr>
+				<th>One Time Binding</th>
+				<th>Two way Binding with Limit To Filter </th>
+			</tr>
+			<tr>
+				<td>
+					<ul class="dataList">
+						<li ng-repeat="d in ::main.oneTimeData">
+							<h4>{{d.name}}</h4>
+							<span>{{d.age}}</span>
+							<span>{{d.city}}</span>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<ul class="dataList">
+						<li ng-repeat="d in main.twoWayData | limitTo:20">
+							<h4>{{d.name}}</h4>
+							<span>{{d.age}}</span>
+							<span>{{d.city}}</span>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Time Taken</td>
+				<td>Time Taken</td>
+			</tr>
+			<tr>
+				<td><button class="btn" ng-click="main.appendData('oneTime')">Generate Data for One time Binding</button></td>
+				<td><button class="btn" ng-click="main.appendData('twoWay')">Generate Data for Two way Binding</button></td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

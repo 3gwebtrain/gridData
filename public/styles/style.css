@@ -1,0 +1,10 @@
+table td {
+	width: 50%;
+	text-align: justify;
+}
+
+ul.dataList li,
+table span {
+	display: inline-block;
+}
+
