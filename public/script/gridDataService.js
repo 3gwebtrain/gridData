@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("gridData.services", [])
+angular.module("gridDataApp.services", [])
 .service('apiService', ['$rootScope', "jsonMaker",  "$q",  function( $rootScope, jsonMaker, $q  ){
 
 	this.generateData = function( size ) {

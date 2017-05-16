@@ -26,3 +26,78 @@ ul.cards{
 	min-width: 200px;
 	padding: 5px;
 }
+
+h4{
+	font-weight: bold;
+	}
+
+h4 a{
+	display: inline-block;
+	width: 2rem;
+	line-height: 1;
+	background: url("../images/sortIcon.png")  no-repeat 0 0;
+	background-size: contain;
+	padding-top: 2rem;
+	cursor: pointer;
+	position: relative;
+	top: 0.5rem;
+}
+/* slide page */
+
+.slideWrapper{
+	/*border: 1px solid gray;*/
+}
+
+.rowContent{
+	display: flex;
+}
+
+.rowContent ul {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	flex-direction: column;
+	max-width: 10%;
+}
+
+.slideWrapper ul.titles{
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.slideWrapper ul.titles li{
+	border: 1px solid gray;
+	max-height: 5rem;
+	min-width: 10%;
+	overflow: hidden;
+}
+
+.rowContent ul li {
+	flex: 1 0 1rem;
+	border-radius: 0.5rem;
+}
+
+
+
+.rowContent ul li  input{
+	width: 100%;
+}
+
+.pageNavigator{
+	text-align: center;
+}
+
+.pageNavigator ul li {
+	display: inline-block;
+	/*border-right: 1px solid gray;*/
+	margin: 1rem;
+}
+
+.pageNavigator ul li a{
+	padding: 1rem;
+	cursor: pointer;
+	display: inline-block;
+}

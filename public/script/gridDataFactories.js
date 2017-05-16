@@ -1,10 +1,9 @@
 "use strict";
 
-angular.module("gridData.factories", [])
+angular.module("gridDataApp.factories", [])
 	.factory('jsonMaker', ['$rootScope', function( $rootScope ){
 
 		var charset = "abcdefghijklmnopqrstuvwxyz"; 
-
 
 		return {
 			init : function( ){
