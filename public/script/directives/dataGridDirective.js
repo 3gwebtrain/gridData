@@ -27,6 +27,8 @@ var dataGridMaker = function( $timeout ) {
 		template :GridTemplate.join(''),
 		link: function(  scope, element, attrs ) {
 
+			return;
+
 			var currentPage = 0;
 
 			scope.titles = [];

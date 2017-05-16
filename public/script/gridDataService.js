@@ -7,7 +7,7 @@ angular.module("gridDataApp.services", [])
 
 		var newData = [];
 
-		var size = size || 100;
+		var size = size || 10;
 		var baseSize = 0;
 
 		while( baseSize < size ) {

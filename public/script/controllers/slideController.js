@@ -6,19 +6,24 @@ angular.module("gridDataApp.controllers", [])
 	var slice = null;
 	gridView.baseData = null;
 	gridView.pages = []; 
+	gridView.dataTitles = [];
 	gridView.activeIndex = 0;
 	gridView.viewPorts = 10;
 
 	gridView.pageDataMaker = function( ) {
 
-		var dataSize = gridView.baseData.length / gridView.viewPorts;
-		
-		for( var i = 0; i < dataSize; i++ ){
-			gridView.pages[i] = {
-				show : i ==0 ? true:false,
-				pageData : gridView.baseData.splice( 0, gridView.viewPorts )
-			};
-		}
+		gridView.layData = gridView.baseData;
+
+		gridView.layData.forEach( function(  object, index ){
+			!gridView.pages[index] ? gridView.pages[index] = [] : gridView.pages[index];
+			angular.forEach( object, function( value, key ){
+				!gridView.pages[key] ? gridView.pages[key] = {} : gridView.pages[key];
+				!gridView.pages[key]["title"] ? gridView.pages[key]["title"] = key : gridView.pages[key]["title"];
+				!gridView.pages[key]["data"] ? gridView.pages[key]["data"] = [] : gridView.pages[key]["data"];
+				gridView.pages[key]["data"].push( value );
+			});
+			console.log( gridView.pages );
+		})
 
 	}
 
