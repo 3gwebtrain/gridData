@@ -1,19 +1,11 @@
 "use strict";
 
 var GridTemplate = [
-			'<div><ul class="titles"><li  ng-repeat="(key,val) in titles"><h4>{{val}}</h4></li></ul>',
-			'<div class="rowContent" ng-repeat="data in page" ng-show=data.show>',
-				'<ul><li  ng-repeat="d in data.pageData"><input type=number ng-model=d.mk  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=number ng-model=d.controlNumber  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=text ng-model=d.control  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=text ng-model=d.prefix  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=text ng-model=d.base  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=text ng-model=d.suffix  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=number ng-model=d.sp  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=number ng-model=d.trimin  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=number ng-model=d.offline  /></li></ul>',
-				'<ul ><li  ng-repeat="d in data.pageData"><input type=text ng-model=d.engine  /></li></ul></div>',
-			'<div class="pageNavigator"><ul><li ng-repeat="navi in pages"><a ng-href="">{{$index+1}}</a></li></ul></div></div>'
+			'<div>',
+				'<div ng-repeat="page in pages" >',
+					'<h4>{{page.title}}</h4>',
+				'</div>',
+			'</div>'
 			];
 
 var dataGridMaker = function( $timeout ) {
@@ -27,7 +19,7 @@ var dataGridMaker = function( $timeout ) {
 		template :GridTemplate.join(''),
 		link: function(  scope, element, attrs ) {
 
-			return;
+			console.log( scope.pages );
 
 			var currentPage = 0;
 
@@ -40,19 +32,6 @@ var dataGridMaker = function( $timeout ) {
 				scope.pages[pageNo].show = true;
 				scope.$apply( );
 			}
-
-			$timeout(function () {
-   				scope.page = [scope.pages[currentPage]];
-   				var getTitles = scope.page[0].pageData[0];
-   				var num = 0;
-   				var label;
-   				for( label in getTitles ){
-   					if( num < 10 ){
-   						scope.titles.push( label );
-   					}
-   					num++;
-   				}
-			});
 
 			//navigation page click stuff;-
 

@@ -1,4 +1,4 @@
-angular.module("gridDataApp.controllers", [ ])
+angular.module("gridDataApp.controllers", [])
 .controller("mainController", ["$scope", "$timeout", "apiService","$filter",
 	function( $scope, $timeout, apiService, $filter  ){
 

@@ -14,16 +14,13 @@ angular.module("gridDataApp.controllers", [])
 
 		gridView.layData = gridView.baseData;
 
-		gridView.layData.forEach( function(  object, index ){
-			!gridView.pages[index] ? gridView.pages[index] = [] : gridView.pages[index];
-			angular.forEach( object, function( value, key ){
-				!gridView.pages[key] ? gridView.pages[key] = {} : gridView.pages[key];
-				!gridView.pages[key]["title"] ? gridView.pages[key]["title"] = key : gridView.pages[key]["title"];
-				!gridView.pages[key]["data"] ? gridView.pages[key]["data"] = [] : gridView.pages[key]["data"];
-				gridView.pages[key]["data"].push( value );
-			});
-			console.log( gridView.pages );
-		})
+		gridView.layData.forEach(function(e) {
+			var that = this;
+			Object.keys(e).forEach(function(key) {
+				if(!that[key]) that[key] = {[key]: [],"title":key}, gridView.pages.push(that[key])
+					that[key][key].push(e[key])
+			})
+		}, {});
 
 	}
 
