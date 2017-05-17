@@ -6,7 +6,6 @@ angular.module("gridDataApp.controllers", [])
 	var slice = null;
 	gridView.baseData = null;
 	gridView.pages = []; 
-	gridView.dataTitles = [];
 	gridView.activeIndex = 0;
 	gridView.viewPorts = 10;
 
