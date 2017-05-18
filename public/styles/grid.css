@@ -58,7 +58,13 @@ h4 a{
 	margin: 0;
 	list-style: none;
 	flex-direction: column;
-	max-width: 10%;
+	width: 10%;
+	overflow-x: hidden;
+}
+
+.rowContent ul li {
+	border: 1px solid gray;
+	overflow-x: hidden;
 }
 
 .slideWrapper ul.titles{
@@ -70,14 +76,8 @@ h4 a{
 
 .slideWrapper ul.titles li{
 	border: 1px solid gray;
-	max-height: 5rem;
-	min-width: 10%;
-	overflow: hidden;
-}
-
-.rowContent ul li {
-	flex: 1 0 1rem;
-	border-radius: 0.5rem;
+	flex:1 0 10%;
+	overflow-x: hidden;
 }
 
 
@@ -92,7 +92,6 @@ h4 a{
 
 .pageNavigator ul li {
 	display: inline-block;
-	/*border-right: 1px solid gray;*/
 	margin: 1rem;
 }
 
@@ -100,4 +99,5 @@ h4 a{
 	padding: 1rem;
 	cursor: pointer;
 	display: inline-block;
+	border: 1px solid gray;
 }

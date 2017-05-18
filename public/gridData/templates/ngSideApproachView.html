@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<h1>{{slideView.title}}</h1>
 	<div class="slideWrapper">
-		<custom-grid pages=slideView.pages divisions=slideView.viewPorts></custom-grid>
+		<custom-grid pages=slideView.pages viewports=slideView.viewPorts arrange-by="slideView.numSort( title )"></custom-grid>
 	</div>
 </div>

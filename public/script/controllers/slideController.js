@@ -7,7 +7,7 @@ angular.module("gridDataApp.controllers", [])
 	gridView.baseData = null;
 	gridView.pages = []; 
 	gridView.activeIndex = 0;
-	gridView.viewPorts = 10;
+	gridView.viewPorts = 12;
 
 	gridView.pageDataMaker = function( ) {
 
@@ -16,8 +16,8 @@ angular.module("gridDataApp.controllers", [])
 		gridView.layData.forEach(function(e) {
 			var that = this;
 			Object.keys(e).forEach(function(key) {
-				if(!that[key]) that[key] = {[key]: [],"title":key}, gridView.pages.push(that[key])
-					that[key][key].push(e[key])
+				if(!that[key]) that[key] = {["key"]: [],"title":key}, gridView.pages.push(that[key])
+					that[key]["key"].push(e[key])
 			})
 		}, {});
 
@@ -30,6 +30,10 @@ angular.module("gridDataApp.controllers", [])
 		gridView.pageDataMaker(  );
 
 	});
+
+	gridView.numSort = function(  title ) {
+		console.log( "title to sort is ", title  );
+	}
 
 	gridView.title = "First Testing!!";
 	
