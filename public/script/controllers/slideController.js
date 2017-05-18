@@ -28,12 +28,9 @@ angular.module("gridDataApp.controllers", [])
 
 		gridView.baseData =  data;
 		gridView.pageDataMaker(  );
+		// gridView.numSort( 'mk0' );
 
 	});
-
-	gridView.numSort = function(  title ) {
-		console.log( "title to sort is ", title  );
-	}
 
 	gridView.title = "First Testing!!";
 	
