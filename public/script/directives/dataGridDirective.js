@@ -6,9 +6,8 @@ var GridTemplate = [
 					'<ul class="titles"><li  ng-repeat="page in currentPage">{{page.title}}</li></ul>',
 					'<div class="rowContent">',
 					'<ul ng-repeat="(title,page) in currentPage">',
-						'<li  ng-repeat="(key,element) in page.key track by $index">',
-						'<input ng-switch-when="page.key[key] == string" type="text" name="" id="" ng-model="page.key[key]" ng-blur="numSort( page )" />',
-						'<input ng-switch-when="page.key[key] == number" name="" id="" ng-model="page.key[key]" ng-blur="numSort( page )" />',
+						'<li  ng-repeat="(key,element) in page.key track by $index" ng-switch="page.key[key]">',
+						'<input type="{{getInputType(page.key[key])}}" name="" id="" ng-model="page.key[key]" ng-blur="numSort( page )" />',
 						'</li></ul></div>',
 					'<div class="pageNavigator"><ul><li  ng-repeat="page in slides"><a ng-href="">{{$index+1}}</a></li></ul></div>',
 				'</div>',
@@ -66,7 +65,12 @@ var dataGridMaker = function( $timeout, $filter ) {
 			elemPageNavi.on( 'click', 'a',  function ( ) {
 				var requiredPage = Number($(this).text());
 				pageNavigation( requiredPage-1 );
-			});			
+			});		
+
+			scope.getInputType = function( param ){
+				if(typeof param == "string") return "text";
+				if(typeof param == "number") return "number";
+ 			}	
 			
 		}
 	}
