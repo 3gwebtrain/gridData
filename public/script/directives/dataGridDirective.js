@@ -7,7 +7,7 @@ var GridTemplate = [
 					'<div class="rowContent">',
 					'<ul ng-repeat="(title,page) in currentPage">',
 						'<li  ng-repeat="element in page.key track by $index">',
-						'<input type="text" name="" id="" ng-model=element ng-blur="numSort( page )" /></li></ul></div>',
+						'<input type="text" name="" id="" ng-model=element ng-blur="numSort( page, element )" /></li></ul></div>',
 					'<div class="pageNavigator"><ul><li  ng-repeat="page in slides"><a ng-href="">{{$index+1}}</a></li></ul></div>',
 				'</div>',
 			'</div>'
@@ -27,13 +27,11 @@ var dataGridMaker = function( $timeout, $filter ) {
 
 			scope.slides = [], scope.currentPageNo = 0;
 
-			scope.numSort = function(  titleToSort ) {
-				var requiredTitle = titleToSort ? titleToSort.title : scope.slides[0][1].title;
-				console.log( requiredTitle );
+			scope.numSort = function(  titleToSort, element ) {
+				var requiredTitle = titleToSort ? titleToSort.title : scope.slides[0][0].title;
 				scope.slides[scope.currentPageNo].forEach( function( item, index ){
 					if( item.title == requiredTitle ){
-						return item.key = $filter('orderBy')(item.key,"");
-						// scope.$apply( );
+						console.log( element, item.key );
 					}
 				})
 			}
