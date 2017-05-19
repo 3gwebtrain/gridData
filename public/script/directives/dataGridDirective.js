@@ -6,8 +6,10 @@ var GridTemplate = [
 					'<ul class="titles"><li  ng-repeat="page in currentPage">{{page.title}}</li></ul>',
 					'<div class="rowContent">',
 					'<ul ng-repeat="(title,page) in currentPage">',
-						'<li  ng-repeat="element in page.key track by $index">',
-						'<input type="text" name="" id="" ng-model=element ng-blur="numSort( page, element )" /></li></ul></div>',
+						'<li  ng-repeat="(key,element) in page.key track by $index">',
+						'<input ng-switch-when="page.key[key] == string" type="text" name="" id="" ng-model="page.key[key]" ng-blur="numSort( page )" />',
+						'<input ng-switch-when="page.key[key] == number" name="" id="" ng-model="page.key[key]" ng-blur="numSort( page )" />',
+						'</li></ul></div>',
 					'<div class="pageNavigator"><ul><li  ng-repeat="page in slides"><a ng-href="">{{$index+1}}</a></li></ul></div>',
 				'</div>',
 			'</div>'
@@ -19,20 +21,21 @@ var dataGridMaker = function( $timeout, $filter ) {
 		scope: {
 			"pages" : "=",
 			"viewports":"=",
-			"numsorter":"&arrangeBy"
+			"numsorter":"&arrangeBy",
+			"model":"=ngModel"
 		},
-		replace: true,
 		template :GridTemplate.join(''),
-		link: function(  scope, element, attrs ) {
+		link: function(  scope, element, attrs  ) {
 
 			scope.slides = [], scope.currentPageNo = 0;
 
-			scope.numSort = function(  titleToSort, element ) {
-				var requiredTitle = titleToSort ? titleToSort.title : scope.slides[0][0].title;
-				scope.slides[scope.currentPageNo].forEach( function( item, index ){
-					if( item.title == requiredTitle ){
-						console.log( element, item.key );
-					}
+			scope.numSort = function( page  ) {
+
+				console.log( page );
+
+				page.key= $filter('orderBy')( page.key, '', false );
+				$timeout(function(){
+					scope.$apply();
 				})
 			}
 
@@ -53,7 +56,7 @@ var dataGridMaker = function( $timeout, $filter ) {
 					pageNavigation( i );
 				}
 				pageNavigation( scope.currentPageNo );
-				scope.numSort(  );
+				scope.numSort(  scope.slides[0][0]  );
 			})
 
 			//navigation page click stuff;-
